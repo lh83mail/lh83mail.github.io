@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.3
+    -->
+    <script>
+window.lsVersion = "1.3.3",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0","1.3.2"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>Emacs用法笔记 | 道法自然</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="icon" type="image/ico" href="/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="Org-Mode">
+
+<!-- Keywords -->
+<meta name="keywords" content=", Emacs">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+    
+        <link rel="alternate" type="application/atom+xml" href="/atom.xml">
+    
+
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="道法自然">
+<meta name="msapplication-starturl" content="http://lh83mail.github.io">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="道法自然">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Emacs用法笔记 | 道法自然">
+<meta property="og:site_name" content="道法自然">
+
+<meta property="og:locale" content="zh-CN">
+
+<meta property="og:url" content="http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/">
+<meta property="og:image" content="http://lh83mail.github.io/img/suka-favicon.ico">
+
+<meta property="og:description" content="Org-Mode">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2018-01-29T05:28:40.000Z">
+    <meta property="article:modified_time" content="2018-01-29T05:28:40.000Z">
+    <meta property="article:author" content="John Doe">
+    <meta property="og:article:tag" content=", Emacs"> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/",
+    "@type": "BlogPosting",
+    "logo": "http://lh83mail.github.io/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/"
+    },
+    "headline": "Emacs用法笔记 | 道法自然",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://lh83mail.github.io/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2018-01-29T05:28:40.000Z",
+    "dateModified": "2019-09-16T13:08:17.868Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://lh83mail.github.io/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "道法自然",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://lh83mail.github.io/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://lh83mail.github.io/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": ", Emacs",
+    "description": "Org-Mode"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">道法自然</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/tags/" class="navbar-link">tags</a>
+    
+        <a href="/reading/" class="navbar-link">读书</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=道法自然&url=http://lh83mail.github.io&pic=http://lh83mail.github.io/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=道法自然&url=http://lh83mail.github.io&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">分享到 Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://lh83mail.github.io" target="_blank" rel="external noopener noreferrer nofollow">分享到 Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://lh83mail.github.io" target="_blank" rel="external noopener noreferrer nofollow">分享到 Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://lh83mail.github.io&title=Emacs用法笔记" target="_blank" rel="external noopener noreferrer nofollow">分享到 LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=道法自然&title=Emacs用法笔记&summary=&pics=http://lh83mail.github.io/img/suka-favicon.ico&url=http://lh83mail.github.io" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://lh83mail.github.io&text=Emacs用法笔记" target="_blank" rel="external noopener noreferrer nofollow">分享到 Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB30lEQVR42u3b0Q6CMBBEUf7/p/VVSTszi5i0y+XFRBGOSVva2Xq8FjwOUKBAgRqgDnF8njM69+uC4nvxfUC1QQ0bnbhpFZfeB1Qv1Pli5/fP781upK6jPgf1LJQbDFUDBgXKoWYXPHeK2Q8C9RyUa6jJxG0E+8ssAdTyKDV5u/P1ttUMqKVRNnSYDIazRq8a+22pC6ilUaohzpAq8Kg0dFC9US7UcJ1BAV2nANUT5UAqCHMBmVuQgOqFSsPT0UIzGWCTxQaovij3pSQYcw9r+WNAtUCph6caQJNwIw3QQPVCVQPTSgHbDaZ28AS1JcpN9q9M9NRETgWzoHqhkodsUiRKFh/TTgKqBapSOEo3SahOoyaSoHqgopOLYW1lsWEHT1DboVwjTyb8LpRNN+6A6oFykzt5ETOYqo50KeAAtQ0qCSJ+Cc1UAaA08wS1DcoWB4PN8EnRyBY9QbVDqcJQpXhdCUSi3YugtkbdVXB0GwRt6gJqW1SyeHQNPC0g2SIBqBaoaKOxCEEqQVk5dQG1LSoJYJM/TrjJYqmhg9oedfUPF9WNOHJzBajHoNINypXBFNSzUQkiDXbVQgRUL5R60CYbB5MipS2Og2qDSh+a1c2DlXADVB/USgcoUKBAfRxvByuwD6JOA9kAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+        <a href="/atom.xml" target="_blank" class="navbar-link">RSS</a>
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Emacs用法笔记</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2018-01-29</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Emacs用法笔记&url=http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/&pic=http://lh83mail.github.io/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Emacs用法笔记&url=http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">分享到 Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/" target="_blank" rel="external noopener noreferrer nofollow">分享到 Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/" target="_blank" rel="external noopener noreferrer nofollow">分享到 Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/&title=道法自然" target="_blank" rel="external noopener noreferrer nofollow">分享到 LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=道法自然&title=道法自然&summary=&pics=http://lh83mail.github.io/img/suka-favicon.ico&url=http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://lh83mail.github.io/2018/01/29/emacs/emacs_base_use/&text=道法自然" target="_blank" rel="external noopener noreferrer nofollow">分享到 Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB30lEQVR42u3b0Q6CMBBEUf7/p/VVSTszi5i0y+XFRBGOSVva2Xq8FjwOUKBAgRqgDnF8njM69+uC4nvxfUC1QQ0bnbhpFZfeB1Qv1Pli5/fP781upK6jPgf1LJQbDFUDBgXKoWYXPHeK2Q8C9RyUa6jJxG0E+8ssAdTyKDV5u/P1ttUMqKVRNnSYDIazRq8a+22pC6ilUaohzpAq8Kg0dFC9US7UcJ1BAV2nANUT5UAqCHMBmVuQgOqFSsPT0UIzGWCTxQaovij3pSQYcw9r+WNAtUCph6caQJNwIw3QQPVCVQPTSgHbDaZ28AS1JcpN9q9M9NRETgWzoHqhkodsUiRKFh/TTgKqBapSOEo3SahOoyaSoHqgopOLYW1lsWEHT1DboVwjTyb8LpRNN+6A6oFykzt5ETOYqo50KeAAtQ0qCSJ+Cc1UAaA08wS1DcoWB4PN8EnRyBY9QbVDqcJQpXhdCUSi3YugtkbdVXB0GwRt6gJqW1SyeHQNPC0g2SIBqBaoaKOxCEEqQVk5dQG1LSoJYJM/TrjJYqmhg9oedfUPF9WNOHJzBajHoNINypXBFNSzUQkiDXbVQgRUL5R60CYbB5MipS2Og2qDSh+a1c2DlXADVB/USgcoUKBAfRxvByuwD6JOA9kAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Org-Mode"><span class="post-toc-number">1.</span> <span class="post-toc-text">Org-Mode</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">参考资料</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标签"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">标签</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#排版"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">排版</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#有序列表与无序列表"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">有序列表与无序列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缩进"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">缩进</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#链接"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">链接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自动连接"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">自动连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手动连接"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">手动连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内部连接"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">内部连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入图片"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">插入图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问链接"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">访问链接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入-编辑链接"><span class="post-toc-number">1.4.6.</span> <span class="post-toc-text">插入/编辑链接</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#嵌入元数据"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">嵌入元数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内容元数据"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">内容元数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注释"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表格与图片"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">表格与图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#嵌入html"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">嵌入html</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包含文件"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">包含文件</span></a></li></ol></li></ol></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="Org-Mode"><a href="#Org-Mode" class="headerlink" title="Org-Mode"></a>Org-Mode</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><p>Org-mode手册:</p>
+<p> <a href="http://orgmode.org/org.html" target="_blank" rel="noopener">http://orgmode.org/org.html</a> </p>
+</li>
+<li><p>博文:<br> <a href="http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html" target="_blank" rel="noopener">http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html</a></p>
+</li>
+</ul>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>  标签格式, :标签1:标签2:标签N:</p>
+<h2 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h2><h3 id="有序列表与无序列表"><a href="#有序列表与无序列表" class="headerlink" title="有序列表与无序列表"></a>有序列表与无序列表</h3><p>无序列表以’-‘、’+’或者’*’开头</p>
+<p>有序列表以’1.’或者’1)’开头</p>
+<p>描述列表用’::’</p>
+<p> <em>注意事项</em></p>
+<p>列表符号后面都要有空格</p>
+<p>同级别的列表缩进要相同</p>
+<p>如果想要加入同级别的列表，可以 M-RET</p>
+<p>空两行之后列表结束，如果空一行执行M-RET，实际上还是入同级项</p>
+<pre><code>无序列表:
+- 列表项1 :: 说明
+- 列表项2 :: 说明
+
+有序列表
+1. 列表项1 :: 说明
+2. 列表项2 :: 说明
+</code></pre><h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><p>切换缩进模式　 org-indent-mode</p>
+<p>如果想让某个文件默认使用缩进方式打开，可以在文件头部增加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#+STARTUP: indent</span><br></pre></td></tr></table></figure>
+<p>如果想要全局使用,可以在配置中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(setq org-startup-indented t)</span><br></pre></td></tr></table></figure>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>在一个链接上按<code>C-c C-o</code>即可访问，至于调用什么程序访问，取决于链接的内容，emacs和org mode的配置了。</p>
+<h3 id="自动连接"><a href="#自动连接" class="headerlink" title="自动连接"></a>自动连接</h3><p>对于符合链接规则的内容，org-mode会自动将其视为链接，包括括文件、网页、邮箱、新闻组、BBDB 数据库项、 IRC 会话和记录等。下面是一些例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">http://www.astro.uva.nl/~dominik            on the web</span><br><span class="line">file:/home/dominik/images/jupiter.jpg       file, absolute path</span><br><span class="line">/home/dominik/images/jupiter.jpg            same as above</span><br><span class="line">file:papers/last.pdf                        file, relative path</span><br><span class="line">file:projects.org                           another Org file</span><br><span class="line">docview:papers/last.pdf::NNN                open file in doc-view mode at page NNN</span><br><span class="line">id:B7423F4D-2E8A-471B-8810-C40F074717E9     Link to heading by ID</span><br><span class="line">news:comp.emacs                             Usenet link</span><br><span class="line">mailto:adent@galaxy.net                     Mail link</span><br><span class="line">vm:folder                                   VM folder link</span><br><span class="line">vm:folder#id                                VM message link</span><br><span class="line">wl:folder#id                                WANDERLUST message link</span><br><span class="line">mhe:folder#id                               MH-E message link</span><br><span class="line">rmail:folder#id                             RMAIL message link</span><br><span class="line">gnus:group#id                               Gnus article link</span><br><span class="line">bbdb:R.*Stallman                            BBDB link (with regexp)</span><br><span class="line">irc:/irc.com/#emacs/bob                     IRC link</span><br><span class="line">info:org:External%20links                   Info node link (with encoded space)</span><br></pre></td></tr></table></figure>
+<p>对于文件链接，可以用::后面增加定位符的方式链接到文件的特定位置。定位符可以是行号或搜索选项。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file:~/code/main.c::255                     进入到 255 行</span><br><span class="line">file:~/xx.org::My Target                    找到目标‘&lt;&lt;My Target&gt;&gt;’</span><br><span class="line">file:~/xx.org/::p#my-custom-id               查找自定义 id 的项</span><br></pre></td></tr></table></figure>
+<h3 id="手动连接"><a href="#手动连接" class="headerlink" title="手动连接"></a>手动连接</h3><p>类似于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[link][description]]</span><br><span class="line">[[link]]</span><br></pre></td></tr></table></figure></p>
+<h3 id="内部连接"><a href="#内部连接" class="headerlink" title="内部连接"></a>内部连接</h3><p>内部链接就类似于HTML的锚点（实际上export成HTML文件后就变成了锚点），可以实现在一个文档内部的跳转。如下命令定义了一个名为target的跳转目标：</p>
+<pre><code>n#&lt;&lt;target&gt;&gt; (这里我把锚点设置到*连接*这一部分开始处，大家可以点击下面效果中两个连接试试效果)
+如下方式可以设置到target的链接：
+[[target]] 或 [[target][猛击锚点]]
+</code></pre><h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p>插入图片直接使用相对链接，不能有description部分。<br>显示/隐藏图片显示命令：<code>org-display-inline-images</code></p>
+<p>使用相对链接 ,例如： <code>[[./your-images.png]]</code></p>
+<h3 id="访问链接"><a href="#访问链接" class="headerlink" title="访问链接"></a>访问链接</h3><p>快捷键 C-c C-o</p>
+<h3 id="插入-编辑链接"><a href="#插入-编辑链接" class="headerlink" title="插入/编辑链接"></a>插入/编辑链接</h3><p>快捷键 C-c C-l<br>命令 org-insert-link</p>
+<h2 id="嵌入元数据"><a href="#嵌入元数据" class="headerlink" title="嵌入元数据"></a>嵌入元数据</h2><h3 id="内容元数据"><a href="#内容元数据" class="headerlink" title="内容元数据"></a>内容元数据</h3><p>org-mode中有以下几种</p>
+<pre><code>s    #+begin_src ... #+end_src 
+e    #+begin_example ... #+end_example  : 单行的例子以冒号开头
+q    #+begin_quote ... #+end_quote      通常用于引用，与默认格式相比左右都会留出缩进
+v    #+begin_verse ... #+end_verse      默认内容不换行，需要留出空行才能换行
+c    #+begin_center ... #+end_center 
+l    #+begin_latex ... #+end_latex 
+L    #+latex: 
+h    #+begin_html ... #+end_html 
+H    #+html: 
+a    #+begin_ascii ... #+end_ascii 
+A    #+ascii: 
+i    #+index: line 
+I    #+include: line
+</code></pre><p><strong>例如：</strong> 代码 上面的单字母为快捷键字母，如输入一个&lt;s 然后TAB后就变为：</p>
+<pre><code>#+BEGIN_SRC 
+
+#+END_SRC
+</code></pre><p>上面的代码我们还可以加入一些参数，如</p>
+<pre><code>#+begin_src c -n -t -h 7 -w 40
+
+#+end_src
+</code></pre><p>其中：</p>
+<ol>
+<li>c为所添加的语言</li>
+<li>-n 显示行号</li>
+<li>-t 清除格式</li>
+<li>-h 7 设置高度为7 -w 40设置宽度为40</li>
+</ol>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>以‘#‘开头的行被看作注释，不会被导出区块注释采用如下写法：</p>
+<pre><code>#+BEGIN_COMMENT
+块注释
+...
+#+END_COMMENT
+</code></pre><h3 id="表格与图片"><a href="#表格与图片" class="headerlink" title="表格与图片"></a>表格与图片</h3><p>对于表格和图片，可以在前面增加标题和标签的说明，以方便交叉引用。比如在表格的前面添加：</p>
+<pre><code>#+CAPTION: This is the caption for the next table (or link)
+</code></pre><p>则在需要的地方可以通过</p>
+<p>\ref{table1}<br>来引用该表格。</p>
+<h3 id="嵌入html"><a href="#嵌入html" class="headerlink" title="嵌入html"></a>嵌入html</h3><p>对于导出html以及发布，嵌入html代码就很有用。比如下面的例子适用于格式化为cnblogs的代码块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;cnblogs_Highlighter&quot;&gt;</span><br><span class="line">&lt;pre class=&quot;brush:cpp&quot;&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/pre&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>相当于在cnblogs的网页编辑器中插入”c++”代码。</p>
+<h3 id="包含文件"><a href="#包含文件" class="headerlink" title="包含文件"></a>包含文件</h3><p>当导出文档时，你可以包含其他文件中的内容。比如，想包含你的“.emacs”文件，你可以用：<br><code>#+INCLUDE: &quot;~/.emacs&quot; src emacs-lisp</code><br>可选的第二个第三个参数是组织方式（例如，“quote”，“example”，或者“src”），如果是 “src”，语言用来格式化内容。组织方式是可选的，如果不给出，文本会被当作 Org 模式的正常处理。用 C-c ,可以访问包含的文件。</p>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-09-16");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2018-01-29T05:28:40.000Z" itemprop="datePublished">2018-01-29</time>
+
+    , 最后修改于&nbsp;<time datetime="2019-09-16T13:08:17.868Z" itemprop="dateModified">2019-09-16</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+
+<a class="post-tags-list-item" href="/tags/Emacs/" rel="tag">#&nbsp;Emacs</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2018/03/31/nginx/nginx/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Nginx常用</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://lh83mail.github.io">道法自然</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
